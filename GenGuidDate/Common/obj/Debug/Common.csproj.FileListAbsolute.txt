@@ -1,0 +1,16 @@
+F:\Bovawang\GeneralClass\GenGuidDate\Common\bin\Debug\Common.dll
+F:\Bovawang\GeneralClass\GenGuidDate\Common\bin\Debug\Common.pdb
+F:\Bovawang\GeneralClass\GenGuidDate\Common\bin\Debug\MahApps.Metro.dll
+F:\Bovawang\GeneralClass\GenGuidDate\Common\bin\Debug\MahApps.Metro.IconPacks.dll
+F:\Bovawang\GeneralClass\GenGuidDate\Common\bin\Debug\System.Windows.Interactivity.dll
+F:\Bovawang\GeneralClass\GenGuidDate\Common\bin\Debug\MahApps.Metro.pdb
+F:\Bovawang\GeneralClass\GenGuidDate\Common\bin\Debug\MahApps.Metro.xml
+F:\Bovawang\GeneralClass\GenGuidDate\Common\bin\Debug\MahApps.Metro.IconPacks.pdb
+F:\Bovawang\GeneralClass\GenGuidDate\Common\bin\Debug\MahApps.Metro.IconPacks.xml
+F:\Bovawang\GeneralClass\GenGuidDate\Common\obj\Debug\Common.csprojResolveAssemblyReference.cache
+F:\Bovawang\GeneralClass\GenGuidDate\Common\obj\Debug\Resources\Icons.baml
+F:\Bovawang\GeneralClass\GenGuidDate\Common\obj\Debug\Resources\IconsNonShared.baml
+F:\Bovawang\GeneralClass\GenGuidDate\Common\obj\Debug\Common_MarkupCompile.cache
+F:\Bovawang\GeneralClass\GenGuidDate\Common\obj\Debug\Common.g.resources
+F:\Bovawang\GeneralClass\GenGuidDate\Common\obj\Debug\Common.dll
+F:\Bovawang\GeneralClass\GenGuidDate\Common\obj\Debug\Common.pdb
