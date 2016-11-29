@@ -8,12 +8,12 @@
         xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
         xmlns:Behaviours="clr-namespace:MahApps.Metro.Behaviours;assembly=MahApps.Metro"
-        Title="MainWindow" Height="450" Width="500" Icon="bogerv.ico"
+        Title="MainWindow" Height="550" Width="500" Icon="bogerv.ico"
         ResizeMode="CanResizeWithGrip"
         BorderThickness="1"
         BorderBrush="{DynamicResource AccentBaseColorBrush}"
         WindowStartupLocation="CenterScreen"
-        WindowState="Maximized"
+        WindowState="Normal"
         UseNoneWindowStyle="False" 
         IgnoreTaskbarOnMaximize="True" >
     <!--UseNoneWindowStyle: 是否显示程序顶层按钮-->
@@ -21,7 +21,7 @@
     <i:Interaction.Behaviors>
         <Behaviours:BorderlessWindowBehavior />
     </i:Interaction.Behaviors>
-    
+
     <Controls:MetroWindow.Resources>
         <ResourceDictionary>
             <Style x:Key="FontAwesome">
@@ -137,41 +137,65 @@
         </Controls:WindowCommands>
     </Controls:MetroWindow.RightWindowCommands>
 
-    <StackPanel>
-        <TextBox x:Name="guidNum" Height="23" TextWrapping="Wrap" />
-        <Controls:Tile Title="" 
-                    TiltFactor="2"
-                    Width="50" Height="50" 
-                    Count="Generate" TitleFontSize="10" CountFontSize="10" HorizontalAlignment="Left"  FlowDirection="LeftToRight" Margin="2" Click="button_Click">
-        </Controls:Tile>
-        <Controls:Tile Title="" 
-                    TiltFactor="3"
-                    Width="50" Height="50" 
-                    Count="New" TitleFontSize="10" CountFontSize="10" HorizontalAlignment="Left" Margin="2"  FlowDirection="LeftToRight" Click="NewWindow_Click">
-        </Controls:Tile>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
 
-        <StackPanel>
-            <Rectangle Height="20" Width="20" HorizontalAlignment="Left">
-                <Rectangle.Fill>
-                    <VisualBrush Visual="{StaticResource appbar_add}" />
-                </Rectangle.Fill>
-            </Rectangle>
+        <StackPanel Grid.Row="0" Grid.ColumnSpan="2">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="1*" />
+                </Grid.ColumnDefinitions>
+                <TextBox x:Name="tableName_1" Height="20" TextWrapping="Wrap" Grid.Row="0" Grid.Column="0" />
+                <TextBox x:Name="contentList_1" Height="100" TextWrapping="Wrap" AcceptsReturn="True" Grid.Row="1" Grid.Column="0" ScrollViewer.VerticalScrollBarVisibility="Auto" />
+                <TextBox x:Name="tableName_2" Height="20" TextWrapping="Wrap" Grid.Row="0" Grid.Column="1" />
+                <TextBox x:Name="contentList_2" Height="100" TextWrapping="Wrap" AcceptsReturn="True" Grid.Row="1" Grid.Column="1" ScrollViewer.VerticalScrollBarVisibility="Auto" />
+                <TextBox x:Name="contentList_3" Height="50" TextWrapping="Wrap" AcceptsReturn="True" Grid.Row="2" Grid.Column="0" ScrollViewer.VerticalScrollBarVisibility="Auto" />
+                <TextBox x:Name="contentList_4" Height="50" TextWrapping="Wrap" AcceptsReturn="True" Grid.Row="2" Grid.Column="1" ScrollViewer.VerticalScrollBarVisibility="Auto" />
+            </Grid>
         </StackPanel>
-        <DataGrid ItemsSource="{Binding People}" Name="guidList"  ScrollViewer.VerticalScrollBarVisibility="Auto" Height="300">
+        <Grid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2">
+            <Controls:Tile Name="processBtn" Title="" 
+                TiltFactor="2"
+                Width="auto" Height="30" 
+                Count="Generate" TitleFontSize="10" CountFontSize="10" HorizontalAlignment="Left"  FlowDirection="LeftToRight" Margin="2" Click="button_Click">
+            </Controls:Tile>
+            <Controls:Tile Name="sendMailBtn" Title="" 
+                TiltFactor="2"
+                Width="auto" Height="30" 
+                Count="Send Mail" TitleFontSize="10" CountFontSize="10" HorizontalAlignment="Right"  FlowDirection="LeftToRight" Margin="2" Click="sendMailBtn_Click">
+            </Controls:Tile>
+        </Grid>
+        <DataGrid ItemsSource="{Binding Path=People}"
+                      Name="guidList"
+                      Grid.Row="2" Grid.ColumnSpan="2" 
+                      HorizontalAlignment="Stretch" 
+                      VerticalAlignment="Stretch" 
+                      ScrollViewer.VerticalScrollBarVisibility="Auto"
+                      AutoGenerateColumns="True">
             <DataGrid.Columns>
                 <DataGridCheckBoxColumn ElementStyle="{DynamicResource MetroDataGridCheckBox}"
-                                        EditingElementStyle="{DynamicResource MetroDataGridCheckBox}"
-                                        Header="IsSelected"
-                                        Binding="{Binding RelativeSource={RelativeSource AncestorType=DataGridRow}, Path=IsSelected, Mode=OneWay}"
-                                        />
+                                EditingElementStyle="{DynamicResource MetroDataGridCheckBox}"
+                                Header="IsSelected"
+                                Binding="{Binding RelativeSource={RelativeSource AncestorType=DataGridRow}, Path=IsSelected, Mode=OneWay}"
+                                />
             </DataGrid.Columns>
         </DataGrid>
+    </Grid>
 
-        <WrapPanel Margin="12">
-            <TextBlock Text="&#xf01a;" Style="{DynamicResource FontAwesome}" />
-        </WrapPanel>
-    </StackPanel>
-    
     <controls:MetroWindow.WindowButtonCommands>
         <controls:WindowButtonCommands Minimize="A custom Tooltip which will be shown on Min button"
                                        Maximize="Maximize the window"

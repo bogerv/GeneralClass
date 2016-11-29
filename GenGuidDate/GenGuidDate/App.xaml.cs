@@ -35,7 +35,7 @@ namespace GenGuidDate
             // create custom accents
             ThemeManagerHelper.CreateAppStyleBy(Colors.Red);
             ThemeManagerHelper.CreateAppStyleBy(Colors.GreenYellow);
-            ThemeManagerHelper.CreateAppStyleBy(Colors.Indigo, true);
+            ThemeManagerHelper.CreateAppStyleBy(Colors.Green, true);
 
             base.OnStartup(e);
         }
