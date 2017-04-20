@@ -54,22 +54,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CIAreaPackMap.cs" />
-    <Compile Include="CITree.cs" />
-    <Compile Include="CI_Area_Map.cs" />
-    <Compile Include="GenDbContext.cs" />
-    <Compile Include="HRLevel.cs" />
-    <Compile Include="II_CI_Area_Grade_Mapping.cs" />
-    <Compile Include="II_Class.cs" />
-    <Compile Include="II_Instance.cs" />
-    <Compile Include="Job.cs" />
-    <Compile Include="Job_ReqOnAreaPack.cs" />
-    <Compile Include="Personal_CI.cs" />
-    <Compile Include="Personal_Job_Map.cs" />
-    <Compile Include="Personal_Profile.cs" />
+    <Compile Include="Context\TLEContext.cs" />
+    <Compile Include="Entitities\TleEntities\Product.cs" />
+    <Compile Include="Entitities\TleEntities\UserInfo.cs" />
+    <Compile Include="Entitities\TleEntities\Modality.cs" />
+    <Compile Include="Entitities\LmsEntities\CIAreaPackMap.cs" />
+    <Compile Include="Entitities\LmsEntities\CITree.cs" />
+    <Compile Include="Entitities\LmsEntities\CI_Area_Map.cs" />
+    <Compile Include="Context\GenDbContext.cs" />
+    <Compile Include="Entitities\LmsEntities\HRLevel.cs" />
+    <Compile Include="Entitities\LmsEntities\II_CI_Area_Grade_Mapping.cs" />
+    <Compile Include="Entitities\LmsEntities\II_Class.cs" />
+    <Compile Include="Entitities\LmsEntities\II_Instance.cs" />
+    <Compile Include="Entitities\LmsEntities\Job.cs" />
+    <Compile Include="Entitities\LmsEntities\Job_ReqOnAreaPack.cs" />
+    <Compile Include="Entitities\LmsEntities\Personal_CI.cs" />
+    <Compile Include="Entitities\LmsEntities\Personal_Job_Map.cs" />
+    <Compile Include="Entitities\LmsEntities\Personal_Profile.cs" />
+    <Compile Include="Entitities\TleEntities\Level.cs" />
+    <Compile Include="Entitities\TleEntities\UserLevel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Team.cs" />
-    <Compile Include="Test_Specification.cs" />
+    <Compile Include="Entitities\LmsEntities\Team.cs" />
+    <Compile Include="Entitities\LmsEntities\Test_Specification.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

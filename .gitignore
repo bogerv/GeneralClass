@@ -1,7 +1,7 @@
 /GenGuidDate/packages
+**/bin/**
+**/obj/**
 /GenGuidDate/GenGuidDate/bin
-/GenGuidDate/GenGuidDate/obj
-/GenGuidDate/Common/bin
-/GenGuidDate/Common/obj
 /GenGuidDate/Gen.EntityFramework/bin
 /GenGuidDate/Gen.EntityFramework/obj
+/GenGuidDate/GenGuidDate/obj

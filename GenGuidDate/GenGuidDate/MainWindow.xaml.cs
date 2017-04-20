@@ -20,6 +20,8 @@ using System.Configuration;
 using System.Net;
 using System.Net.Mail;
 using Microsoft.Exchange.WebServices.Data;
+using System.IO;
+using Gen.EntityFramework.Entitities.TleEntities;
 
 namespace GenGuidDate
 {
@@ -237,7 +239,7 @@ namespace GenGuidDate
                         var personalCI = dbContext.Personal_CI.FirstOrDefault(p => p.CITreeId != null && p.CITreeId.Equals(cpEntity.CITreeId) && p.AreaPackId != null && p.AreaPackId.Equals(cpEntity.AreaPackId) && p.PersonalProfileId != null && p.PersonalProfileId.Equals(itemFirst.Key));
                         if (personalCI != null)
                         {
-                            if (personalCI.CreatedOn.Value > (cpAddTime!=null?cpAddTime:DateTime.Parse("2016-11-02 00:00:00.000")))
+                            if (personalCI.CreatedOn.Value > (cpAddTime != null ? cpAddTime : DateTime.Parse("2016-11-02 00:00:00.000")))
                             {
                                 var personalCIId = personalCI.PersonalCIId;
                                 string sql = string.Format(@"update Personal_CI set [Status]='Qualified' where PersonalCIId='{0}'", personalCIId);
@@ -682,6 +684,22 @@ namespace GenGuidDate
             SendEmail("jiawei1.wang@sonymobile.com", "Bogerv Test", "Just is a test mail!");
         }
 
+        private void tleToolBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Disable_tleToolBtn();
+            new TleWindow(Enable_tleToolBtn) { Owner = this }.ShowDialog();
+        }
+        private void Enable_tleToolBtn()
+        {
+            this.tleToolBtn.Visibility = Visibility.Visible;
+            this.tleToollBtnProgressRing.Visibility = Visibility.Hidden;
+        }
+        private void Disable_tleToolBtn()
+        {
+            this.tleToolBtn.Visibility = Visibility.Hidden;
+            this.tleToollBtnProgressRing.Visibility = Visibility.Visible;
+        }
+
         /// <summary>
         /// 发送邮件接口。
         /// </summary>
@@ -770,7 +788,8 @@ namespace GenGuidDate
                     return true;
                 }
             }
-            catch(Exception e) {
+            catch (Exception e)
+            {
                 throw new Exception(e.ToString());
             }
         }
